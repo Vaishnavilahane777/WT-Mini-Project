@@ -13,13 +13,90 @@
     </head>
 
     <body>
+        <!-- Authentication Forms -->
+        <div class="auth-container" id="authContainer">
+            <div class="forms-wrapper">
+                <span class="close-btn">&times;</span>
+                
+                <!-- Login Form -->
+                <div class="form-container" id="loginForm">
+                    <h2>Welcome Back!</h2>
+                    <form onsubmit="return handleLogin(event)">
+                        <div class="form-group">
+                            <i class="bx bxs-envelope"></i>
+                            <input type="email" id="loginEmail" required placeholder="Email address">
+                        </div>
+                        <div class="form-group">
+                            <i class="bx bxs-lock-alt"></i>
+                            <input type="password" id="loginPassword" required placeholder="Password">
+                        </div>
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-password" onclick="toggleForm('forgot')">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="auth-btn">Login</button>
+                        <p class="switch-form">
+                            Don't have an account? <a href="#" onclick="toggleForm('register')">Sign up</a>
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Forgot Password Form -->
+                <div class="form-container" id="forgotForm">
+                    <h2>Reset Password</h2>
+                    <p class="form-description">Enter your email address and we'll send you a link to reset your password.</p>
+                    <form onsubmit="return handleForgotPassword(event)">
+                        <div class="form-group">
+                            <i class="bx bxs-envelope"></i>
+                            <input type="email" id="resetEmail" required placeholder="Enter your email">
+                        </div>
+                        <button type="submit" class="auth-btn">Send Reset Link</button>
+                        <p class="switch-form">
+                            Remember your password? <a href="#" onclick="toggleForm('login')">Back to Login</a>
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Register Form -->
+                <div class="form-container" id="registerForm">
+                    <h2>Create Account</h2>
+                    <form onsubmit="return handleRegister(event)">
+                        <div class="form-group">
+                            <i class="bx bxs-user"></i>
+                            <input type="text" id="fullName" required placeholder="Full name">
+                        </div>
+                        <div class="form-group">
+                            <i class="bx bxs-envelope"></i>
+                            <input type="email" id="registerEmail" required placeholder="Email address">
+                        </div>
+                        <div class="form-group">
+                            <i class="bx bxs-lock-alt"></i>
+                            <input type="password" id="registerPassword" required placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <i class="bx bxs-lock-alt"></i>
+                            <input type="password" id="confirmPassword" required placeholder="Confirm password">
+                        </div>
+                        <button type="submit" class="auth-btn">Create Account</button>
+                        <p class="switch-form">
+                            Already have an account? <a href="#" onclick="toggleForm('login')">Login</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <header class="navbar">
-    <div class="logo">Secureblogg</div>
-    <nav class="nav-links">
-      <a href="#" class="signin">Sign In</a>
-      <a href="#" class="create-blog">Create Blog</a>
-    </nav>
-  </header>
+            <div class="logo">Secureblogg</div>
+            <nav class="nav-links">
+                <a href="#" class="signin">Sign In</a>
+                <a href="#" class="create-blog">Create Blog</a>
+            </nav>
+        </header>
 
   <footer>
     <div id ="Main">
@@ -63,9 +140,15 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" id="profileLink">
           <span class="item-icon"><i class="bx bxs-user-circle"></i></span>
           <span class="item-txt">Profile</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link" id="logoutBtn">
+          <span class="item-icon"><i class="bx bx-log-out"></i></span>
+          <span class="item-txt">Logout</span>
         </a>
       </li>
       <li>
@@ -75,6 +158,43 @@
         </a>
       </li>
     </ul>
+  </div>
+
+  <!-- Profile Section -->
+  <div class="profile-overlay" id="profileOverlay">
+    <div class="profile-container">
+      <span class="close-btn" id="closeProfile">&times;</span>
+      <div class="profile-header">
+        <div class="profile-avatar">
+          <i class="bx bxs-user-circle"></i>
+        </div>
+        <h2 id="profileName">User Name</h2>
+      </div>
+      <div class="profile-content">
+        <div class="profile-info">
+          <div class="info-group">
+            <label>Email</label>
+            <p id="profileEmail">user@example.com</p>
+          </div>
+          <div class="info-group">
+            <label>Member Since</label>
+            <p id="profileJoinDate">January 1, 2025</p>
+          </div>
+          <div class="info-group">
+            <label>Total Blogs</label>
+            <p id="profileBlogCount">0</p>
+          </div>
+        </div>
+        <div class="profile-actions">
+          <button class="edit-profile-btn" onclick="showEditProfile()">
+            <i class="bx bxs-edit"></i> Edit Profile
+          </button>
+          <button class="change-password-btn" onclick="showChangePassword()">
+            <i class="bx bxs-key"></i> Change Password
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
     </body>
 </html>

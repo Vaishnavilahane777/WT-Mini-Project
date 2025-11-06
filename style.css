@@ -1,13 +1,333 @@
 
-.navbar {
-  display: flex;
-  align-items: center;
-  padding: 15px 40px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  top: 0;
+.auth-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
 }
 
-.logo {
+.forms-wrapper {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.form-container {
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #00008d;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #00008d;
+    outline: none;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+}
+
+.remember-me input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.remember-me:hover input ~ .checkmark {
+    border-color: #00008d;
+}
+
+.remember-me input:checked ~ .checkmark {
+    background-color: #00008d;
+    border-color: #00008d;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.remember-me input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.forgot-password {
+    color: #00008d;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.forgot-password:hover {
+    color: #000066;
+    text-decoration: underline;
+}
+
+.form-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    background: #00008d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-btn:hover {
+    background: #000066;
+}
+
+.switch-form {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.switch-form a {
+    color: #00008d;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.switch-form a:hover {
+    text-decoration: underline;
+}
+
+.profile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-avatar i {
+    font-size: 60px;
+    color: #00008d;
+}
+
+.profile-header h2 {
+    color: #00008d;
+    margin: 0;
+    font-size: 24px;
+}
+
+.profile-info {
+    margin-bottom: 30px;
+}
+
+.info-group {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.info-group label {
+    display: block;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.info-group p {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.profile-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.profile-actions button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.edit-profile-btn {
+    background: #00008d;
+    color: white;
+}
+
+.edit-profile-btn:hover {
+    background: #000066;
+}
+
+.change-password-btn {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.change-password-btn:hover {
+    background: #e0e0e0;
+}
+
+#logoutBtn {
+    color: #dc3545;
+}
+
+#logoutBtn:hover {
+    background: rgba(220, 53, 69, 0.1);
+}
+
+#logoutBtn .item-icon i {
+    color: #dc3545;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    top: 0;
+}.logo {
   font-size: 30px;
   font-weight: 1000;
   color: #00008d;
@@ -98,6 +418,38 @@ footer {
   align-items: center;
   font-size: 26px;
   color: #00008d;
+}
+
+/* Logout link styles */
+#logoutLink {
+  display: none;
+}
+
+#logoutLink .item-icon i {
+  color: #dc3545;
+}
+
+#logoutLink .item-txt {
+  color: #dc3545;
+}
+
+#logoutLink:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+
+#logoutLink {
+  color: #dc3545;
+  transition: all 0.3s ease;
+}
+
+#logoutLink:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+#logoutLink .item-icon i {
+  color: #dc3545;
+
   transition: all 0.3s ease;
   cursor: pointer;
 }
