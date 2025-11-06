@@ -46,7 +46,7 @@
 
 .form-container h2 {
     text-align: center;
-    color: #00008d;
+    color: #8484ff;
     margin-bottom: 30px;
     font-size: 24px;
 }
@@ -579,7 +579,7 @@ text-decoration: none;
 /* Hero Section */
         .hero {
             padding: 80px 0;
-            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            background: linear-gradient(135deg,#669bbc, #3a0ca3);
             color: white;
             text-align: center;
             border-radius: 0 0 30px 30px;
@@ -746,42 +746,66 @@ text-decoration: none;
   background-color: #4cc9f0;
 }
 
- /* Footer */
-    footer {
-      /* Dark footer to visually separate from the rest of the page */
-      background: #0b2447; /* deep navy */
-      color: #f3f6ff; /* light text for contrast */
-      padding: 50px 0 20px;
-      text-align: center;
-    }
+/* 🌿 Pastel Gradient Footer */
+footer {
+  background: linear-gradient(135deg, #f6d5f7, #d7fbf9, #fbd7d7);
+  color: #3b3b3b;
+  padding: 60px 0 30px;
+  text-align: center;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  padding-left: 120px; /* Increased left spacing */
+}
 
-    /* Footer-specific overrides to ensure links and social text are visible */
-    footer .footer-column h3 {
-      color: #e6f0ff;
-    }
+/* Footer grid layout */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 50px;
+  margin-bottom: 40px;
+  justify-items: center;
+}
 
-    footer .footer-links a {
-      color: #cfe3ff;
-    }
+/* Column headings */
+.footer-column h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #3b3b3b;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 
-    footer .footer-links a:hover {
-      color: #ffffff;
-    }
+/* Footer links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
 
-    footer .Social span {
-      color: #f3f6ff;
-    }
+.footer-links li {
+  margin-bottom: 10px;
+}
 
-    footer .Social i {
-      background: #ffffff;
-      color: #0b2447;
-    }
+.footer-links a {
+  color: #5a5a5a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
 
+.footer-links a:hover {
+  color: #6a1b9a;
+  text-shadow: 0 0 8px rgba(106, 27, 154, 0.3);
+}
+
+/* 🌷 Social Icons */
 #Main {
   display: flex;
   justify-content: center;
   align-items: flex-end;
   gap: 40px;
+  margin-bottom: 30px;
 }
 
 .Social {
@@ -795,8 +819,9 @@ text-decoration: none;
 .Social span {
   font-size: 14px;
   font-weight: 600;
-  color: #000000;
+  color: #3b3b3b;
 }
+
 .Social i {
   width: 60px;
   height: 60px;
@@ -809,6 +834,7 @@ text-decoration: none;
   align-items: center;
   font-size: 26px;
   color: #00008d;
+  transition: all 0.3s ease;
 }
 
 .Social i:hover {
@@ -818,67 +844,41 @@ text-decoration: none;
   color: #00008d;
 }
 
+/* Hover glow + soft color shift */
 #Instagram i {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #962fbf, #4f5bd5);  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+   background: #ffffff;
+    
+  transition: all 0.3s ease;
 }
 
 #Instagram i:hover {
-  box-shadow: inset 5px 5px 10px #ffacb9,
-               inset -5px -5px 10px #ffffff;
+  box-shadow: inset 8px 8px 15px rgb(236, 112, 112), /* soft blue shadow */
+              inset -8px -8px 15px rgba(255, 255, 255, 0.5);
+  transform: translateY(-4px);
+}
+
+/* Copyright */
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: #555;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
 }
 
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
 
-        .footer-column h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #adb5bd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #495057;
-            color: #adb5bd;
-            font-size: 0.9rem;
-        }
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .footer-content {
+    text-align: center;
+  }
+  #Main {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
 
         #createPostBtn {
   background: linear-gradient(135deg, #28a745, #20c997);

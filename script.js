@@ -324,6 +324,8 @@ function toggleLogoutVisibility(show) {
 // Add logout event listener
 logoutLink.addEventListener('click', handleLogout);
 
+
+
 // Update UI after login to include logout visibility
 function updateUIAfterLogin(user) {
     signInBtn.textContent = user.name;
