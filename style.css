@@ -13,13 +13,14 @@
 }
 
 .forms-wrapper {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
+    background: linear-gradient(to right bottom, #ffffff, #f8f9fa);
+    padding: 40px;
+    border-radius: 15px;
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     position: relative;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
 }
 
 .close-btn {
@@ -46,9 +47,11 @@
 
 .form-container h2 {
     text-align: center;
-    color: #8484ff;
+    color: #4a4a8f;
     margin-bottom: 30px;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
 }
 
 .form-group {
@@ -66,11 +69,12 @@
 
 .form-group input {
     width: 100%;
-    padding: 12px 15px 12px 45px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 14px 15px 14px 45px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
     font-size: 16px;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
 }
 
 .form-group input:focus {
@@ -748,7 +752,7 @@ text-decoration: none;
 
 /* 🌿 Pastel Gradient Footer */
 footer {
-  background: linear-gradient(135deg, #f6d5f7, #d7fbf9, #fbd7d7);
+  background: linear-gradient(135deg, rgb(144, 185, 239), #caf0f8ff);
   color: #3b3b3b;
   padding: 60px 0 30px;
   text-align: center;

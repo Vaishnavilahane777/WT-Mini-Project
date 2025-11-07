@@ -20,7 +20,8 @@
                 
                 <!-- Login Form -->
                 <div class="form-container" id="loginForm">
-                    <h2>Welcome Back!</h2>
+                    <h2>Welcome Back! 👋</h2>
+                    <p class="form-description">Sign in to continue to your account</p>
                     <form onsubmit="return handleLogin(event)">
                         <div class="form-group">
                             <i class="bx bxs-envelope"></i>
@@ -38,7 +39,10 @@
                             </label>
                             <a href="#" class="forgot-password" onclick="toggleForm('forgot')">Forgot password?</a>
                         </div>
-                        <button type="submit" class="auth-btn">Login</button>
+                        <button type="submit" class="auth-btn">
+                            <i class='bx bx-log-in-circle'></i>
+                            Sign In
+                        </button>
                         <p class="switch-form">
                             Don't have an account? <a href="#" onclick="toggleForm('register')">Sign up</a>
                         </p>
@@ -63,7 +67,8 @@
 
                 <!-- Register Form -->
                 <div class="form-container" id="registerForm">
-                    <h2>Create Account</h2>
+                    <h2>Join Secureblogg 🚀</h2>
+                    <p class="form-description">Create your account and start sharing your thoughts securely</p>
                     <form onsubmit="return handleRegister(event)">
                         <div class="form-group">
                             <i class="bx bxs-user"></i>
@@ -81,9 +86,12 @@
                             <i class="bx bxs-lock-alt"></i>
                             <input type="password" id="confirmPassword" required placeholder="Confirm password">
                         </div>
-                        <button type="submit" class="auth-btn">Create Account</button>
+                        <button type="submit" class="auth-btn">
+                            <i class='bx bx-user-plus'></i>
+                            Create Account
+                        </button>
                         <p class="switch-form">
-                            Already have an account? <a href="#" onclick="toggleForm('login')">Login</a>
+                            Already have an account? <a href="#" onclick="toggleForm('login')">Sign in</a>
                         </p>
                     </form>
                 </div>
@@ -92,27 +100,48 @@
 
          <!-- Header -->
 <header class="navbar">
-            <div class="logo">Secureblogg</div>
+            <a href="/" class="logo">
+                <i class='bx bx-shield-quarter'></i>
+                Secureblogg
+            </a>
             <nav class="nav-links">
-                <a href="#" class="signin">Sign In</a>
-                 <button class="btn " id="startWritingBtn" style="margin-left: 15px;">Create </button>
+                <a href="#" class="signin" id="signinLink">Sign In</a>
+                <button class="btn" id="startWritingBtn">
+                    <i class='bx bx-edit'></i>
+                    Create Post
+                </button>
             </nav>
+            
         </header>
 <div class="sidebar">
     <ul>
       <li>
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" id="homeLink">
           <span class="item-icon"><i class="bx bxs-home"></i></span>
           <span class="item-txt">Home</span>
         </a>
       </li>
     
+<li>
+        <a href="#" class="nav-link" id="writeBlogLink">
+          <span class="item-icon"><i class="bx bx-edit"></i></span>
+          <span class="item-txt">Write Blog</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="nav-link">
+          <span class="item-icon"><i class="bx bxs-compass"></i></span>
+          <span class="item-txt">Explore</span>
+        </a>
+        
       <li>
         <a href="#" class="nav-link">
           <span class="item-icon"><i class="bx bxs-book-content"></i></span>
           <span class="item-txt">My Blogs</span>
         </a>
       </li>
+
       <li>
         <a href="#" class="nav-link">
           <span class="item-icon"><i class="bx bxs-category"></i></span>
@@ -165,9 +194,9 @@
         <div class="blog-grid" id="featuredPostsGrid">
             <!-- Blog Post 1 -->
             <div class="blog-card">
-               <div class="card-img" style="background-image: url('images/food.jpg');"></div>
+               <div class="card-img" style="background-color: #d93f42;"></div>
                 <div class="card-content">
-                    <span class="card-category">Technology</span>
+                    <span class="card-category">Technology⚙️</span>
                     <h3 class="card-title">The Future of Web Development in 2023</h3>
                     <p class="card-excerpt">Exploring the latest trends and technologies that are shaping the future of web development.</p>
                     <div class="card-meta">
@@ -182,9 +211,9 @@
             
             <!-- Blog Post 2 -->
             <div class="blog-card">
-                <div class="card-img" style="background-color: #7209b7;"></div>
+                <div class="card-img" style="background-color: #973dd3;"></div>
                 <div class="card-content">
-                    <span class="card-category">Travel</span>
+                    <span class="card-category">Travel✈️</span>
                     <h3 class="card-title">10 Hidden Gems in Southeast Asia</h3>
                     <p class="card-excerpt">Discover these breathtaking locations that most tourists haven't found yet.</p>
                     <div class="card-meta">
@@ -199,9 +228,9 @@
             
             <!-- Blog Post 3 -->
             <div class="blog-card">
-                 <div class="card-img" style="background-color: #7209b7;"></div>
+                 <div class="card-img" style="background-color: #ff338f;"></div>
                 <div class="card-content">
-                    <span class="card-category">Food</span>
+                    <span class="card-category">Food🥗</span>
                     <h3 class="card-title">Best Dishes In The World</h3>
                     <p class="card-excerpt">India is rich in foods and spices, India serves best dishes and have variety of dishses</p>
                     <div class="card-meta">
@@ -223,7 +252,7 @@
       <div class="footer-column">
         <h3>About Us</h3>
         <p>
-          We’re a creative platform where writers share their thoughts, ideas, and experiences with the world.
+          We’re a creative platform where writers share their thoughts, ideas, and experiences with the world.🪄
         </p>
       </div>
 
